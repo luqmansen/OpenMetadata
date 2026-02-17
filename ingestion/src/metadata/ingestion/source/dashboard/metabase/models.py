@@ -89,6 +89,7 @@ class DatasetQuery(BaseModel):
             for stage in stages:
                 if isinstance(stage, dict) and stage.get("native"):
                     data["native"] = {"query": stage["native"]}
+                    data["type"] = "native"
                     break
         return data
 
